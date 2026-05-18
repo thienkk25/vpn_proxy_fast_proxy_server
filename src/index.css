@@ -706,12 +706,75 @@ nav a:hover {
   border-top: 1px solid var(--border-glass);
 }
 
+/* Typography Classes */
+.hero-title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
 @media (max-width: 768px) {
+  /* Typography */
+  .hero-title {
+    font-size: 40px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+  
+  /* Layout */
+  .section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
   .tools-grid, .explore-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  
   .speed-cards {
     grid-template-columns: 1fr;
   }
+  
+  /* Header */
+  .header-container {
+    height: 60px;
+  }
+  .logo h1 {
+    font-size: 16px;
+  }
   nav { display: none; }
+  
+  .btn-outline {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+  
+  /* Components */
+  .glass-card {
+    padding: 24px !important;
+  }
 }
+

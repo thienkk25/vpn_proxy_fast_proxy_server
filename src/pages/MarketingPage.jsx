@@ -15,7 +15,7 @@ const MarketingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            style={{ display: 'inline-block', padding: '8px 16px', background: 'rgba(6, 182, 212, 0.1)', border: '1px solid var(--primary-cyan)', borderRadius: '100px', color: 'var(--primary-cyan)', fontSize: '14px', fontWeight: '600', marginBottom: '24px' }}
+            className="badge"
           >
             Next-Generation VPN Architecture
           </motion.div>
@@ -23,7 +23,7 @@ const MarketingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            style={{ fontSize: '64px', fontWeight: '800', lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-1px' }}
+            className="hero-title"
           >
             Secure Your <span className="text-gradient">Digital Life</span>
           </motion.h2>
@@ -31,7 +31,7 @@ const MarketingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            style={{ fontSize: '20px', color: 'var(--text-muted)', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}
+            className="hero-subtitle"
           >
             Experience military-grade encryption, ultra-fast global servers, and a strict no-logs policy. Your online privacy, finally guaranteed.
           </motion.p>
@@ -39,7 +39,7 @@ const MarketingPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}
+            style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}
           >
             <button className="btn btn-primary" style={{ padding: '16px 32px', fontSize: '18px' }}>Get Started Free</button>
             <button className="btn btn-outline" style={{ padding: '16px 32px', fontSize: '18px', background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.2)', color: 'white' }}>View Features</button>
@@ -58,7 +58,7 @@ const MarketingPage = () => {
             className="text-center" 
             style={{ marginBottom: '60px' }}
           >
-            <h2 style={{ fontSize: '36px', fontWeight: '700' }}>Why Choose VPN Proxy?</h2>
+            <h2 className="section-title">Why Choose VPN Proxy?</h2>
             <p style={{ color: 'var(--text-muted)', marginTop: '16px' }}>Built for performance, designed for privacy.</p>
           </motion.div>
 
@@ -133,7 +133,7 @@ const MarketingPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 style={{ fontSize: '40px', fontWeight: '800', marginBottom: '24px' }}>Global Server Network</h2>
+            <h2 className="section-title">Global Server Network</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '18px', marginBottom: '32px' }}>
               Access content from anywhere in the world. Our massive network of high-speed servers ensures a stable connection no matter where you are.
             </p>
@@ -197,7 +197,7 @@ const MarketingPage = () => {
           transition={{ duration: 0.5 }}
           style={{ padding: '60px 40px', background: 'rgba(6, 182, 212, 0.05)', border: '1px solid rgba(6, 182, 212, 0.2)' }}
         >
-          <h2 style={{ fontSize: '36px', fontWeight: '800', marginBottom: '20px', color: 'white' }}>Ready to take back your privacy?</h2>
+          <h2 className="section-title" style={{ color: 'white' }}>Ready to take back your privacy?</h2>
           <p style={{ fontSize: '18px', opacity: 0.8, marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>
             Join thousands of users who trust VPN Proxy for their daily internet security. Download now and start your free trial.
           </p>
