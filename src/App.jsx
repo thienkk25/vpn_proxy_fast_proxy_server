@@ -1,0 +1,40 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import MarketingPage from './pages/MarketingPage';
+import SupportPage from './pages/SupportPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import './index.css';
+
+// Component to handle external redirects
+const ExternalRedirect = ({ url }) => {
+  useEffect(() => {
+    window.location.replace(url);
+  }, [url]);
+  return <div className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>Redirecting...</div>;
+};
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<MarketingPage />} />
+          <Route path="/marketing" element={<MarketingPage />} />
+          <Route path="/support" element={<SupportPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route 
+            path="/terms" 
+            element={<ExternalRedirect url="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" />} 
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+      <Footer />
+    </BrowserRouter>
+  );
+}
+
+export default App;
