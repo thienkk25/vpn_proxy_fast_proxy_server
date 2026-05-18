@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import MarketingPage from './pages/MarketingPage';
 import SupportPage from './pages/SupportPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import CyberGlobe from './components/CyberGlobe';
 import './index.css';
 
 // Component to handle external redirects
@@ -18,6 +19,7 @@ const ExternalRedirect = ({ url }) => {
 function App() {
   return (
     <BrowserRouter>
+      <CyberGlobe />
       <Header />
       <div className="main-content">
         <Routes>
