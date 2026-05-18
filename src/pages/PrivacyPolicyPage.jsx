@@ -6,18 +6,15 @@ const PrivacyPolicyPage = () => {
   }, []);
 
   return (
-    <main>
-      <section className="hero support-hero">
-        <div className="hero-bg-shapes">
-          <div className="shape shape-2"></div>
-        </div>
-        <div className="container text-center hero-content">
+    <main style={{ position: 'relative', zIndex: 10 }}>
+      <section className="section" style={{ paddingTop: '120px' }}>
+        <div className="container text-center">
           <h2 className="hero-title">Privacy <span className="text-gradient">Policy</span></h2>
           <p className="hero-subtitle">Your privacy is our top priority. Learn how we handle your data.</p>
         </div>
       </section>
 
-      <section className="section bg-light">
+      <section className="section">
         <div className="container">
           <div className="contact-card" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'left' }}>
             <p style={{ marginBottom: '30px', fontWeight: '500' }}>

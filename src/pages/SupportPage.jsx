@@ -39,18 +39,15 @@ const SupportPage = () => {
   ];
 
   return (
-    <main>
-      <section className="hero support-hero">
-        <div className="hero-bg-shapes">
-          <div className="shape shape-1"></div>
-        </div>
-        <div className="container text-center hero-content">
+    <main style={{ position: 'relative', zIndex: 10 }}>
+      <section className="section" style={{ paddingTop: '120px' }}>
+        <div className="container text-center">
           <h2 className="hero-title">How can we <span className="text-gradient">help you?</span></h2>
           <p className="hero-subtitle">Welcome to the Support Center. We are here to assist you with any issues or questions.</p>
         </div>
       </section>
 
-      <section id="faq" className="section bg-light">
+      <section id="faq" className="section">
         <div className="container">
           <h3 className="section-title text-center">Frequently Asked Questions</h3>
           <div className="faq-list">
