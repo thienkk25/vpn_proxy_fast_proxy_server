@@ -25,8 +25,14 @@ const ParticleSphere = () => {
 
   useFrame((state) => {
     if (ref.current) {
-      ref.current.rotation.y = state.clock.getElapsedTime() * 0.05;
-      ref.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.1) * 0.1;
+      // Base rotation from time
+      const timeRotation = state.clock.getElapsedTime() * 0.05;
+      
+      // Rotation from scroll (makes globe spin up/down as user scrolls)
+      const scrollRotation = window.scrollY * 0.002;
+      
+      ref.current.rotation.y = timeRotation + scrollRotation;
+      ref.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.1) * 0.1 + (window.scrollY * 0.001);
       
       // Slight mouse interaction
       const targetX = (state.mouse.x * Math.PI) / 10;

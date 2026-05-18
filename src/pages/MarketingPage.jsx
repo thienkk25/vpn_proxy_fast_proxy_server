@@ -48,7 +48,7 @@ const MarketingPage = () => {
       </section>
 
       {/* 2. Key Features Section */}
-      <section className="section" id="features" style={{ background: 'linear-gradient(to bottom, transparent, rgba(7, 11, 20, 0.95) 20%)', paddingBottom: '100px' }}>
+      <section className="section" id="features" style={{ paddingBottom: '100px' }}>
         <div className="container">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -124,7 +124,7 @@ const MarketingPage = () => {
       </section>
 
       {/* 3. Global Network Section */}
-      <section className="section" id="servers" style={{ background: 'rgba(7, 11, 20, 1)' }}>
+      <section className="section" id="servers" style={{ position: 'relative' }}>
         <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '60px', flexWrap: 'wrap' }}>
           <motion.div 
             style={{ flex: 1, minWidth: '300px' }}
@@ -188,15 +188,16 @@ const MarketingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section text-center" style={{ background: 'var(--primary-cyan)', color: 'black' }}>
+      <section className="section text-center" style={{ position: 'relative', marginTop: '100px', marginBottom: '100px' }}>
         <motion.div 
-          className="container"
+          className="container glass-card"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          style={{ padding: '60px 40px', background: 'rgba(6, 182, 212, 0.05)', border: '1px solid rgba(6, 182, 212, 0.2)' }}
         >
-          <h2 style={{ fontSize: '36px', fontWeight: '800', marginBottom: '20px', color: 'black' }}>Ready to take back your privacy?</h2>
+          <h2 style={{ fontSize: '36px', fontWeight: '800', marginBottom: '20px', color: 'white' }}>Ready to take back your privacy?</h2>
           <p style={{ fontSize: '18px', opacity: 0.8, marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>
             Join thousands of users who trust VPN Proxy for their daily internet security. Download now and start your free trial.
           </p>
@@ -205,7 +206,7 @@ const MarketingPage = () => {
             className="btn btn-primary btn-lg" 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            style={{ background: '#111', color: 'white', boxShadow: '0 10px 30px rgba(0,0,0,0.3)', padding: '16px 40px', fontSize: '18px' }}
+            style={{ padding: '16px 40px', fontSize: '18px' }}
           >
             Download on App Store
           </motion.a>
