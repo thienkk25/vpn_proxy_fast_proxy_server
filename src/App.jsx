@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MarketingPage from './pages/MarketingPage';
@@ -11,10 +12,11 @@ import './index.css';
 
 // Component to handle external redirects
 const ExternalRedirect = ({ url }) => {
+  const { t } = useTranslation();
   useEffect(() => {
     window.location.replace(url);
   }, [url]);
-  return <div className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>Redirecting...</div>;
+  return <div className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>{t('web.redirecting', 'Redirecting...')}</div>;
 };
 
 function App() {

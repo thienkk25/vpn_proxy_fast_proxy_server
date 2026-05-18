@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const SupportPage = () => {
+  const { t } = useTranslation();
   const [activeFaq, setActiveFaq] = useState(null);
   const [formSuccess, setFormSuccess] = useState(false);
 
@@ -21,20 +23,20 @@ const SupportPage = () => {
 
   const faqs = [
     {
-      q: "How do I connect to a VPN server?",
-      a: "Open the app, select your preferred location from the server list, and tap the large connection button in the center of the home screen."
+      q: t('web.support.faq.q1', "How do I reset my password?"),
+      a: t('web.support.faq.a1', "Go to settings, tap Account, and select Reset Password. We will send an email with instructions.")
     },
     {
-      q: "Why is my connection slow?",
-      a: "Connection speed can depend on your distance from the server, your original internet speed, and server load. Try switching to a different server location for better performance."
+      q: t('web.support.faq.q2', "Why is my connection slow?"),
+      a: t('web.support.faq.a2', "Try switching to a server closer to your physical location. You can also try changing the protocol in settings.")
     },
     {
-      q: "How do I restore my Premium purchase?",
-      a: "Go to Settings, tap on 'Manage Subscription' or 'Upgrade', and select 'Restore Purchases'. Make sure you are logged into the same Apple ID used for the purchase."
+      q: t('web.support.faq.q3', "Can I use one account on multiple devices?"),
+      a: t('web.support.faq.a3', "Yes, a premium subscription allows you to connect up to 5 devices simultaneously.")
     },
     {
-      q: "How do I cancel my subscription?",
-      a: "Subscriptions are managed by Apple. Open the Settings app on your iOS device, tap your name, tap Subscriptions, and select VPN Proxy: Fast Proxy Server to manage or cancel it."
+      q: t('web.support.faq.q4', "How do I cancel my subscription?"),
+      a: t('web.support.faq.a4', "Subscriptions are managed by Apple. Open the Settings app on your iOS device, tap your name, tap Subscriptions, and select VPN Proxy: Fast Proxy Server to manage or cancel it.")
     }
   ];
 
@@ -42,14 +44,14 @@ const SupportPage = () => {
     <main style={{ position: 'relative', zIndex: 10 }}>
       <section className="section" style={{ paddingTop: '120px' }}>
         <div className="container text-center">
-          <h2 className="hero-title">How can we <span className="text-gradient">help you?</span></h2>
-          <p className="hero-subtitle">Welcome to the Support Center. We are here to assist you with any issues or questions.</p>
+          <h2 className="hero-title">{t('web.support.title', 'Help Center &')} <span className="text-gradient">{t('web.support.title_gradient', 'Support')}</span></h2>
+          <p className="hero-subtitle">{t('web.support.subtitle', 'How can we help you today? Find answers to common questions or reach out to our team.')}</p>
         </div>
       </section>
 
       <section id="faq" className="section">
         <div className="container">
-          <h3 className="section-title text-center">Frequently Asked Questions</h3>
+          <h3 className="section-title text-center">{t('web.support.faq_title', 'Frequently Asked Questions')}</h3>
           <div className="faq-list">
             {faqs.map((faq, index) => (
               <div key={index} className={`faq-item ${activeFaq === index ? 'active' : ''}`}>
@@ -67,35 +69,35 @@ const SupportPage = () => {
 
       <section id="contact" className="section">
         <div className="container">
-          <h3 className="section-title text-center">Contact Support</h3>
+          <h3 className="section-title text-center">{t('web.support.contact_title', 'Contact Support')}</h3>
           <div className="contact-card">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Your Name</label>
-                <input type="text" id="name" name="name" required placeholder="John Doe" />
+                <label htmlFor="name">{t('web.support.form.name_label', 'Your Name')}</label>
+                <input type="text" id="name" name="name" required placeholder={t('web.support.form.name_placeholder', 'John Doe')} />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="john@example.com" />
+                <label htmlFor="email">{t('web.support.form.email_label', 'Email Address')}</label>
+                <input type="email" id="email" name="email" required placeholder={t('web.support.form.email_placeholder', 'john@example.com')} />
               </div>
               <div className="form-group">
-                <label htmlFor="topic">Topic</label>
+                <label htmlFor="topic">{t('web.support.form.topic_label', 'Topic')}</label>
                 <select id="topic" name="topic" required>
-                  <option value="">Select an issue</option>
-                  <option value="connection">Connection Issue</option>
-                  <option value="billing">Billing & Subscription</option>
-                  <option value="bug">Report a Bug</option>
-                  <option value="feature">Feature Request</option>
-                  <option value="other">Other</option>
+                  <option value="">{t('web.support.form.topic_default', 'Select an issue')}</option>
+                  <option value="connection">{t('web.support.form.topic_connection', 'Connection Issue')}</option>
+                  <option value="billing">{t('web.support.form.topic_billing', 'Billing & Subscription')}</option>
+                  <option value="bug">{t('web.support.form.topic_bug', 'Report a Bug')}</option>
+                  <option value="feature">{t('web.support.form.topic_feature', 'Feature Request')}</option>
+                  <option value="other">{t('web.support.form.topic_other', 'Other')}</option>
                 </select>
               </div>
               <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Please describe your issue in detail..."></textarea>
+                <label htmlFor="message">{t('web.support.form.message_label', 'Message')}</label>
+                <textarea id="message" name="message" rows="5" required placeholder={t('web.support.form.message_placeholder', 'Please describe your issue in detail...')}></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">Send Message</button>
+              <button type="submit" className="btn btn-primary">{t('web.support.form.submit', 'Send Message')}</button>
               {formSuccess && (
-                <div className="success-msg">Your message has been sent successfully. We will get back to you soon!</div>
+                <div className="success-msg">{t('web.support.form.success', 'Your message has been sent successfully. We will get back to you soon!')}</div>
               )}
             </form>
           </div>

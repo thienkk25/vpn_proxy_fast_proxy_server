@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="footer">
       <div className="container">
@@ -8,18 +10,18 @@ const Footer = () => {
           <div className="footer-brand">
             <div className="logo">
               <img src="/logo.png" alt="VPN Proxy Logo" style={{ width: '40px', height: '40px', borderRadius: '10px' }} />
-              <h4>VPN Proxy: Fast Proxy Server</h4>
+              <h4>{t('vpnProxyTitle', 'VPN Proxy: Fast Proxy Server').replace('\n', ': ')}</h4>
             </div>
-            <p>Fast, Secure & Private Proxy Server</p>
+            <p>{t('web.footer.tagline', 'Fast, Secure & Private Proxy Server')}</p>
           </div>
           <div className="footer-links">
-            <Link to="/support">Support</Link>
-            <Link to="/terms">Terms of Service</Link>
-            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/support">{t('web.nav.support', 'Support')}</Link>
+            <Link to="/terms">{t('web.terms.title', 'Terms of')} {t('web.terms.title_gradient', 'Service')}</Link>
+            <Link to="/privacy-policy">{t('privacy_policy', 'Privacy Policy')}</Link>
           </div>
         </div>
         <div className="copyright">
-          &copy; {new Date().getFullYear()} TN. All rights reserved.
+          &copy; {new Date().getFullYear()} TN. {t('web.footer.all_rights_reserved', 'All rights reserved.')}
         </div>
       </div>
     </footer>
