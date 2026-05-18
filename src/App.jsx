@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import MarketingPage from './pages/MarketingPage';
 import SupportPage from './pages/SupportPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import PrivacyChoicesPage from './pages/PrivacyChoicesPage';
 import './index.css';
 
 // Component to handle external redirects
@@ -26,7 +25,6 @@ function App() {
           <Route path="/marketing" element={<MarketingPage />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/privacy-choices" element={<PrivacyChoicesPage />} />
           <Route 
             path="/terms" 
             element={<ExternalRedirect url="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" />} 
