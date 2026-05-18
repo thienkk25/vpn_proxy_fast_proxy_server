@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import MarketingPage from './pages/MarketingPage';
 import SupportPage from './pages/SupportPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
 import CyberGlobe from './components/CyberGlobe';
 import './index.css';
 
@@ -27,10 +28,7 @@ function App() {
           <Route path="/marketing" element={<MarketingPage />} />
           <Route path="/support" element={<SupportPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route 
-            path="/terms" 
-            element={<ExternalRedirect url="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" />} 
-          />
+          <Route path="/terms" element={<TermsOfServicePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
