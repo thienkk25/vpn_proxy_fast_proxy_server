@@ -99,7 +99,7 @@ const TermsOfServicePage = () => {
             <p style={{ marginBottom: '30px', color: 'var(--text-muted)' }}>
               {t('web.legal.contact_desc', 'If you have any questions, please contact us at:')}
               <br /><br />
-              <strong>{t('email', 'Email')}:</strong> <a href="mailto:thien789987@gmail.com">thien789987@gmail.com</a>
+              <strong>{t('email', 'Email')}:</strong> <a href="mailto:support.tn25@gmail.com">support.tn25@gmail.com</a>
             </p>
 
           </div>
